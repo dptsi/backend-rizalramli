@@ -1,0 +1,22 @@
+Menjalankan Unit Test
+- defaultnya masuk folder
+- go test (harus masuk folder) 
+- go test ./... (di root project) 
+- go test -v (lebih detail)
+- go test -v -run TestHelloWorldRizal (hanya function tertentu)
+
+Menggagalkan Unit Test
+- Fail() (masih lanjut kode unit test selanjutnya)
+- FailNow() (tidak melanjutkan kode program selanjutnya)
+- Error() (seperti log tapi selanjutnya mengeksekusi perintah Fail())
+- Fatal() (seperti log tapi selanjutnya mengeksekusi perintah FailNow())
+
+Assertion
+- menggunakan library Testify
+- go get github.com/stretchr/testify
+- perbedaan assert (mengeksekusi perintah Fail()) dan require (mengeksekusi perintah FailNow())
+
+Skip Test (Membatalkan Test)
+- Membatalkan test yang ada di kode program selanjutnya
+
+Before And After Test
