@@ -53,3 +53,56 @@ func TestSkip(t *testing.T){
 	result := HelloWorld("Ramli")
 	assert.Equal(t,"Hello Ramli",result,"Harusnya Hello Ramli")
 }
+
+func TestMain(m *testing.M){
+	// Before
+	fmt.Println("before unit test")
+
+	m.Run()
+
+	// After
+	fmt.Println("after unit test")
+}
+
+func TestSubTest(t *testing.T){
+	t.Run("Rizal",func(t *testing.T){
+		result := HelloWorld("Rizal")
+		require.Equal(t,"Hello Rizal",result,"Harusnya Hello Rizal")
+	})
+
+	t.Run("Ramli",func(t *testing.T){
+		result := HelloWorld("Ramli")
+		require.Equal(t,"Hello Ramli",result,"Harusnya Hello Ramli")
+	})
+}
+
+func TestTableHelloWorld(t *testing.T){
+	tests := []struct{
+		name string
+		request string
+		expected string
+	}{
+		{
+			name: "Mohamad",
+			request: "Mohamad",
+			expected: "Hello Mohamad",
+		},
+		{
+			name: "Rizal",
+			request: "Rizal",
+			expected: "Hello Rizal",
+		},
+		{
+			name: "Ramli",
+			request: "Ramli",
+			expected: "Hello Ramli",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name,func(t *testing.T){
+			result := HelloWorld(test.request)
+			require.Equal(t,test.expected,result)
+		})
+	}
+}

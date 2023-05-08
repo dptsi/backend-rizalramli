@@ -1,4 +1,4 @@
-Menjalankan Unit Test
+Menjalankan Unit Test (go test ./...)
 - defaultnya masuk folder
 - go test (harus masuk folder) 
 - go test ./... (di root project) 
@@ -20,3 +20,19 @@ Skip Test (Membatalkan Test)
 - Membatalkan test yang ada di kode program selanjutnya
 
 Before And After Test
+- Harus buat function bernama TestMain
+- dieksekusi sekali
+- hanya jalan di satu package
+
+Sub Test
+- test function di dalam function
+- go test -v -run=TestSubTest ./...
+- go test -v -run=TestSubTest/Rizal ./... (hanya subtest yang bernama rizal)
+
+Table Test
+- seperti sub test tapi dibuat lebih dinamis
+- go test -v -run=TestTableHelloWorld ./...
+
+Mock
+- kasus seperti kode program memanggil API call atau third party service
+- menggunakan library Testify
