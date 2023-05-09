@@ -36,3 +36,18 @@ Table Test
 Mock
 - kasus seperti kode program memanggil API call atau third party service
 - menggunakan library Testify
+
+Benchmark
+- menghitung kecepatan performa aplikasi
+- go test -v -bench=. ./...
+- go test -v -run=TesTidakAda -bench=. ./... (Tanpa run unit test hanya benchmark saja)
+- go test -v -run=TesTidakAda -bench=BenchmarkHelloWorldRamli ./... (hanya run 1 benchmark)
+
+Sub Benchmark
+- sama seperti sub test unit tests
+- go test -v -run=TesTidakAda -bench=BenchmarkSub ./...
+- go test -v -run=TesTidakAda -bench=BenchmarkSub/Rizal ./... (hanya 1 sub benchmark)
+
+Table Benchmark
+- seperti table test
+- go test -v -run=TesTidakAda -bench=BenchmarkTable ./...

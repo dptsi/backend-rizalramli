@@ -11,6 +11,7 @@ type CategoryRepositoryMock struct {
 
 func (repository *CategoryRepositoryMock) FindById(id string) *entity.Category {
 	arguments := repository.Mock.Called(id)
+	// cek data pertama jika nil
 	if arguments.Get(0) == nil {
 		return nil
 	} else {
