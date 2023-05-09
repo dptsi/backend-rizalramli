@@ -16,3 +16,31 @@ Channel
 - go test -v -run=TestInOutChannel
 - go test -v -run=TestBufferedChannel
 - go test -v -run=TestRangeChannel
+- go test -v -run=TestSelectChannel
+- go test -v -run=TestDefaultSelectChannel
+
+Race Condition
+- kasus dimana varibel di dalam goroutine berjalan secara paralel (bersamaan) jadinya variable tidak sesuai
+- go test -v -run=TestRaceCondition
+
+Mutex (Mutual Exclusion)
+- solusi kasus dari race condition
+- kekurangannya aplikasi lebih lambat sedikit
+- keuntungannya variable menjadi konsisten
+- go test -v -run=TestMutex
+
+RW Mutex (Read Write Mutex)
+- akan rebutan antara proses membaca dan mengubah
+- go test -v -run=TestRWMutex
+
+Deadlock
+- proses goroutine menunggu lock sehingga tidak ada satupun go yang bisa jalan
+- go test -v -run=TestDeadlock
+
+Waitgroup
+- karena goroutine berjalan secara async
+- digunakan untuk menunggu sebuah proses dilakukan
+- wajib panggil function Done()
+- go test -v -run=TestWaitGroup
+
+Sync Once
