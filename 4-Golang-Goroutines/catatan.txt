@@ -44,3 +44,18 @@ Waitgroup
 - go test -v -run=TestWaitGroup
 
 Sync Once
+- function di eksekusi hanya sekali saja
+- go test -v -run=TestOnce
+
+Pool
+- implementasi design pattern bernama object pool patter 
+- digunkaan untuk menyimpan data
+- digunakan manage koneksi database
+- terhindar dari race condition
+- setelah di Get(), maka data langsung hilang
+- go test -v -run=TestPool
+
+Sync Map
+- mirip tipe data map
+- aman dari race condition
+- go test -v -run=TestMap
