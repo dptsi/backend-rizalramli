@@ -1,0 +1,18 @@
+Goroutine
+- seperti proses async 
+- berjalan secara concurrency tapi jika laptop multicore maka berjalan secara async (mendahulukan proses yang kecil dulu)
+- tidak disarankan untuk function yang mempunyai return value
+- go test -v -run=TestCreateGoroutine
+- go test -v -run=TestManyGoroutine
+
+Channel
+- agar goroutine berjalan secara synchronus
+- bisa menerima return value dari function
+- impmentasi seperti async await di javascript
+- hanya bisa menerima satu jenis data (string/int,dll)
+- channel harus di close jika tidak digunakan, bisa menyebabkan memory leak
+- go test -v -run=TestCreateChannel
+- go test -v -run=TestChannelAsParameter
+- go test -v -run=TestInOutChannel
+- go test -v -run=TestBufferedChannel
+- go test -v -run=TestRangeChannel
