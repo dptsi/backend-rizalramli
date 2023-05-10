@@ -5,8 +5,8 @@ import (
 	"time"
 )
 
-func getConnection() *sql.DB {
-	db, err := sql.Open("mysql", "root:password@tcp(localhost:3306)/belajar_golang_database")
+func GetConnection() *sql.DB {
+	db, err := sql.Open("mysql", "root:password@tcp(localhost:3306)/belajar_golang_database?parseTime=true")
 
 	if err != nil {
 		panic(err)
