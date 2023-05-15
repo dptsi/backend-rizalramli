@@ -14,9 +14,9 @@ func TestPool(t *testing.T) {
 		},
 	}
 
-	pool.Put("EKo")
-	pool.Put("Kurniawan")
-	pool.Put("Khannedy")
+	pool.Put("Mohamad")
+	pool.Put("Rizal")
+	pool.Put("Ramli")
 
 	for i := 0; i < 10; i++ {
 		go func() {

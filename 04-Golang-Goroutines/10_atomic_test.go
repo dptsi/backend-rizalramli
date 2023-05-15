@@ -1,3 +1,5 @@
+package belajar_goroutine
+
 import (
 	"fmt"
 	"sync"
@@ -10,6 +12,7 @@ func TestAtomic(t *testing.T) {
 	group := sync.WaitGroup{}
 
 	for i := 1; i <= 1000; i++ {
+		group.Add(1)
 		go func() {
 			/**
 			Jika terjadi error : panic: sync: WaitGroup is reused before previous Wait has returned
@@ -18,7 +21,6 @@ func TestAtomic(t *testing.T) {
 			terjadi jika resource hardware kurang cepat ketika menjalankan goroutine diawal
 			Jika hal ini terjadi, silahkan pindahkan kode group.Add(1), ke baris 15 sebelum memanggil go func()
 			*/
-			group.Add(1)
 			for j := 1; j <= 100; j++ {
 				atomic.AddInt64(&x, 1)
 			}
