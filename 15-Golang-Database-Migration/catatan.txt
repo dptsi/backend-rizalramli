@@ -11,3 +11,13 @@ migrate -database "mysql://root:password@tcp(localhost:3306)/belajar_golang_data
 migrate -database "mysql://root:password@tcp(localhost:3306)/belajar_golang_database_migration" -path db/migrations down
 
 #spesific version migration
+migrate -database "mysql://root:password@tcp(localhost:3306)/belajar_golang_database_migration" -path db/migrations up 2 (hanya dua migration atas)
+migrate -database "mysql://root:password@tcp(localhost:3306)/belajar_golang_database_migration" -path db/migrations down 1 (hanya satu migration bawah)
+
+#cek versi saaat ini
+migrate -database "mysql://root:password@tcp(localhost:3306)/belajar_golang_database_migration" -path db/migrations version 
+
+#dirty state
+- perbaiki secara manual
+- drop table correct;
+- migrate -database "mysql://root:password@tcp(localhost:3306)/belajar_golang_database_migration" -path db/migrations force 20230516075841 (versi third table)
