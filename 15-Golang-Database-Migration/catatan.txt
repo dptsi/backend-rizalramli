@@ -1,0 +1,13 @@
+#install golang migrate
+go install -tags 'mysql' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+
+#create migration
+migrate create -ext sql -dir db/migrations create_table_category
+
+#run migration
+migrate -database "mysql://root:password@tcp(localhost:3306)/belajar_golang_database_migration" -path db/migrations up
+
+#rollback migration
+migrate -database "mysql://root:password@tcp(localhost:3306)/belajar_golang_database_migration" -path db/migrations down
+
+#spesific version migration
